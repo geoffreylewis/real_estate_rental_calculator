@@ -2,7 +2,7 @@
 
 ## Software Summary
 
-I'm builing a calculator, only using Python, that calculates the initial capital investment and ROI for a residential rental property.
+I'm building a calculator, only using Python, that calculates the initial capital investment and ROI for a residential rental property.
 
 ## Built With
 
