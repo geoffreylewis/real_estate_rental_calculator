@@ -53,6 +53,31 @@ mrr_costs_entry = ctk.CTkEntry(mrr_costs_frame, placeholder_text = "$")
 mrr_costs_entry.pack()
 
 
+##################################################
+## "Monthly Income" frame and label ##
+##################################################
+monthly_income_frame = ctk.CTkFrame(root)
+monthly_income_frame.pack()
+monthly_income_label = ctk.CTkLabel(monthly_income_frame, text = "Monthly Income")
+monthly_income_label.pack()
+
+# "Rent" frame, label, and entry #
+rent_frame = ctk.CTkFrame(monthly_income_frame)
+rent_frame.pack()
+rent_label = ctk.CTkLabel(rent_frame, text = "Rent")
+rent_label.pack()
+rent_entry = ctk.CTkEntry(rent_frame, placeholder_text = "$")
+rent_entry.pack()
+
+# "Additional Income" frame, label, and entry #
+additional_income_frame = ctk.CTkFrame(monthly_income_frame)
+additional_income_frame.pack()
+additional_income_label = ctk.CTkLabel(additional_income_frame, text = "Additional Income")
+additional_income_label.pack()
+additional_income_entry = ctk.CTkEntry(additional_income_frame, placeholder_text = "$")
+additional_income_entry.pack()
+
+
 #######################################################################
 # Always include this to actually make the desktop app window pop up. #
 #######################################################################
