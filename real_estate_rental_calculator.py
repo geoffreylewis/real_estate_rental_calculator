@@ -78,6 +78,71 @@ additional_income_entry = ctk.CTkEntry(additional_income_frame, placeholder_text
 additional_income_entry.pack()
 
 
+##################################################
+## "Monthly Expenses" frame and label ##
+##################################################
+monthly_expenses_frame = ctk.CTkFrame(root)
+monthly_expenses_frame.pack()
+monthly_expenses_label = ctk.CTkLabel(monthly_expenses_frame, text = "Monthly Expenses")
+monthly_expenses_label.pack()
+
+# "Property Taxes" frame, label, and entry #
+property_taxes_frame = ctk.CTkFrame(monthly_expenses_frame)
+property_taxes_frame.pack()
+property_taxes_label = ctk.CTkLabel(property_taxes_frame, text = "Property Taxes")
+property_taxes_label.pack()
+property_taxes_entry = ctk.CTkEntry(property_taxes_frame, placeholder_text = "$")
+property_taxes_entry.pack()
+
+# "Insurance" frame, label, and entry #
+insurance_frame = ctk.CTkFrame(monthly_expenses_frame)
+insurance_frame.pack()
+insurance_label = ctk.CTkLabel(insurance_frame, text = "Insurance")
+insurance_label.pack()
+insurance_entry = ctk.CTkEntry(insurance_frame, placeholder_text = "$")
+insurance_entry.pack()
+
+# "HOA" frame, label, and entry #
+hoa_frame = ctk.CTkFrame(monthly_expenses_frame)
+hoa_frame.pack()
+hoa_label = ctk.CTkLabel(hoa_frame, text = "HOA")
+hoa_label.pack()
+hoa_entry = ctk.CTkEntry(hoa_frame, placeholder_text = "$")
+hoa_entry.pack()
+
+# "Maintenance" frame, label, and entry #
+maintenance_frame = ctk.CTkFrame(monthly_expenses_frame)
+maintenance_frame.pack()
+maintenance_label = ctk.CTkLabel(maintenance_frame, text = "Maintenance")
+maintenance_label.pack()
+maintenance_entry = ctk.CTkEntry(maintenance_frame, placeholder_text = "%")
+maintenance_entry.pack()
+
+# "Pest Control" frame, label, and entry #
+pest_control_frame = ctk.CTkFrame(monthly_expenses_frame)
+pest_control_frame.pack()
+pest_control_label = ctk.CTkLabel(pest_control_frame, text = "Pest Control")
+pest_control_label.pack()
+pest_control_entry = ctk.CTkEntry(pest_control_frame, placeholder_text = "$")
+pest_control_entry.pack()
+
+# "Property Management" frame, label, and entry #
+property_management_frame = ctk.CTkFrame(monthly_expenses_frame)
+property_management_frame.pack()
+property_management_label = ctk.CTkLabel(property_management_frame, text = "Property Management")
+property_management_label.pack()
+property_management_entry = ctk.CTkEntry(property_management_frame, placeholder_text = "%")
+property_management_entry.pack()
+
+# "Additional Expenses" frame, label, and entry #
+additional_expenses_frame = ctk.CTkFrame(monthly_expenses_frame)
+additional_expenses_frame.pack()
+additional_expenses_label = ctk.CTkLabel(additional_expenses_frame, text = "Additional Expenses")
+additional_expenses_label.pack()
+additional_expenses_entry = ctk.CTkEntry(additional_expenses_frame, placeholder_text = "$")
+additional_expenses_entry.pack()
+
+
 #######################################################################
 # Always include this to actually make the desktop app window pop up. #
 #######################################################################
