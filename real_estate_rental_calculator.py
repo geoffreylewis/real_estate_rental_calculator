@@ -4,6 +4,12 @@
 import customtkinter as ctk
 
 
+###############################################
+# Functions that will be needed at some point #
+###############################################
+
+
+
 ##############################
 ### The main widget/window ###
 ##############################
@@ -141,6 +147,13 @@ additional_expenses_label = ctk.CTkLabel(additional_expenses_frame, text = "Addi
 additional_expenses_label.pack()
 additional_expenses_entry = ctk.CTkEntry(additional_expenses_frame, placeholder_text = "$")
 additional_expenses_entry.pack()
+
+
+############################################
+## Button for performing the calculations ##
+############################################
+calculate_button = ctk.CTkButton(root, text = "Show me the money!")
+calculate_button.pack()
 
 
 #######################################################################
