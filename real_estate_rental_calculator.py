@@ -7,7 +7,14 @@ import customtkinter as ctk
 ###############################################
 # Functions that will be needed at some point #
 ###############################################
+def calculate_initial_capital():
+    initial_capital = int(purchase_price_entry.get()) + int(down_payment_entry.get()) + int(closing_costs_entry.get()) + int(mrr_costs_entry.get())
+    label = ctk.CTkLabel(initial_capital_frame, text = "Initial Capital Investment = " + "$" + str(initial_capital))
+    label.pack()
 
+#def calculate_monthly_income():
+
+#def calculate_monthly_expenses():
 
 
 ##############################
@@ -152,7 +159,7 @@ additional_expenses_entry.pack()
 ############################################
 ## Button for performing the calculations ##
 ############################################
-calculate_button = ctk.CTkButton(root, text = "Show me the money!")
+calculate_button = ctk.CTkButton(root, text = "Show me the money!", command = calculate_initial_capital)
 calculate_button.pack()
 
 
