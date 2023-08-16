@@ -8,7 +8,12 @@ import customtkinter as ctk
 # Functions that will be needed at some point #
 ###############################################
 def calculate_initial_capital():
-    initial_capital = int(purchase_price_entry.get()) + int(down_payment_entry.get()) + int(closing_costs_entry.get()) + int(mrr_costs_entry.get())
+    purchase_price = int(purchase_price_entry.get())
+    down_payment = int(down_payment_entry.get()) * 0.01 * int(purchase_price_entry.get())
+    loan_amount = purchase_price - down_payment
+    closing_costs = int(closing_costs_entry.get()) * 0.01 * loan_amount
+    mrr_costs = int(mrr_costs_entry.get())
+    initial_capital = down_payment + closing_costs + mrr_costs
     label = ctk.CTkLabel(initial_capital_frame, text = "Initial Capital Investment = " + "$" + str(initial_capital))
     label.pack()
 
