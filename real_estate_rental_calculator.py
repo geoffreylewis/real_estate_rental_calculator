@@ -14,12 +14,19 @@ def calculate_initial_capital():
     closing_costs = int(closing_costs_entry.get()) * 0.01 * loan_amount
     mrr_costs = int(mrr_costs_entry.get())
     initial_capital = down_payment + closing_costs + mrr_costs
-    label = ctk.CTkLabel(initial_capital_frame, text = "Initial Capital Investment = " + "$" + str(initial_capital))
-    label.pack()
+    calculated_initial_capital_label = ctk.CTkLabel(initial_capital_frame, text = "Initial Capital Investment = " + "$" + str(initial_capital))
+    calculated_initial_capital_label.pack()
 
-#def calculate_monthly_income():
+def calculate_monthly_income():
+    rent = int(rent_entry.get())
+    additional_income = int(additional_income_entry.get())
+    monthly_income = rent + additional_income
+    calculated_monthly_income_label = ctk.CTkLabel(monthly_income_frame, text = "Monthly Income = " + "$" + str(monthly_income))
+    calculated_monthly_income_label.pack()
 
-#def calculate_monthly_expenses():
+def show_me_the_money():
+    calculate_initial_capital()
+    calculate_monthly_income()
 
 
 ##############################
@@ -164,7 +171,7 @@ additional_expenses_entry.pack()
 ############################################
 ## Button for performing the calculations ##
 ############################################
-calculate_button = ctk.CTkButton(root, text = "Show me the money!", command = calculate_initial_capital)
+calculate_button = ctk.CTkButton(root, text = "Show me the money!", command = show_me_the_money)
 calculate_button.pack()
 
 
