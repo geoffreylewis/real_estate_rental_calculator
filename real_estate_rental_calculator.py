@@ -24,9 +24,23 @@ def calculate_monthly_income():
     calculated_monthly_income_label = ctk.CTkLabel(monthly_income_frame, text = "Monthly Income = " + "$" + str(monthly_income))
     calculated_monthly_income_label.pack()
 
+def calculate_monthly_expenses():
+    rent = int(rent_entry.get())
+    property_taxes = int(property_taxes_entry.get())
+    insurance = int(insurance_entry.get())
+    hoa = int(hoa_entry.get())
+    maintenance = int(maintenance_entry.get()) * 0.01 * rent
+    pest_control = int(pest_control_entry.get())
+    property_management = int(property_management_entry.get()) * 0.01 * rent
+    additional_expenses = int(additional_expenses_entry.get())
+    monthly_expenses = property_taxes + insurance + hoa + maintenance + pest_control + property_management + additional_expenses
+    calculated_monthly_expenses_label = ctk.CTkLabel(monthly_expenses_frame, text = "Monthly Expenses = " + "$" + str(monthly_expenses))
+    calculated_monthly_expenses_label.pack()
+
 def show_me_the_money():
     calculate_initial_capital()
     calculate_monthly_income()
+    calculate_monthly_expenses()
 
 
 ##############################
