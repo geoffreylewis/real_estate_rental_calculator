@@ -110,12 +110,16 @@ mrr_costs_entry.grid()
 ############################
 monthly_income_frame = ctk.CTkFrame(root)
 monthly_income_frame.grid(row = 1)
+monthly_income_frame.rowconfigure(0, weight = 1)
+monthly_income_frame.rowconfigure(1, weight = 1)
+monthly_income_frame.columnconfigure(0, weight = 1)
+monthly_income_frame.columnconfigure(1, weight = 1)
 monthly_income_label = ctk.CTkLabel(monthly_income_frame, text = "Monthly Income")
-monthly_income_label.grid()
+monthly_income_label.grid(row = 0, column = 0, columnspan = 2)
 
 # "Rent" frame, label, and entry #
 rent_frame = ctk.CTkFrame(monthly_income_frame)
-rent_frame.grid()
+rent_frame.grid(row = 1, column = 0)
 rent_label = ctk.CTkLabel(rent_frame, text = "Rent")
 rent_label.grid()
 rent_entry = ctk.CTkEntry(rent_frame, placeholder_text = "$")
@@ -123,7 +127,7 @@ rent_entry.grid()
 
 # "Additional Income" frame, label, and entry #
 additional_income_frame = ctk.CTkFrame(monthly_income_frame)
-additional_income_frame.grid()
+additional_income_frame.grid(row = 1, column = 1)
 additional_income_label = ctk.CTkLabel(additional_income_frame, text = "Additional Income")
 additional_income_label.grid()
 additional_income_entry = ctk.CTkEntry(additional_income_frame, placeholder_text = "$")
