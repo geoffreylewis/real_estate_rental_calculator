@@ -16,14 +16,14 @@ def calculate_initial_capital():
     mrr_costs = int(mrr_costs_entry.get())
     initial_capital = down_payment + closing_costs + mrr_costs
     calculated_initial_capital_label = ctk.CTkLabel(initial_capital_frame, text = "Initial Capital Investment = " + "$" + str(initial_capital))
-    calculated_initial_capital_label.grid()
+    calculated_initial_capital_label.grid(row = 3, column = 0, columnspan = 2)
 
 def calculate_monthly_income():
     rent = int(rent_entry.get())
     additional_income = int(additional_income_entry.get())
     monthly_income = rent + additional_income
     calculated_monthly_income_label = ctk.CTkLabel(monthly_income_frame, text = "Monthly Income = " + "$" + str(monthly_income))
-    calculated_monthly_income_label.grid()
+    calculated_monthly_income_label.grid(row = 2, column = 0, columnspan = 2)
 
 def calculate_monthly_expenses():
     rent = int(rent_entry.get())
@@ -36,7 +36,7 @@ def calculate_monthly_expenses():
     additional_expenses = int(additional_expenses_entry.get())
     monthly_expenses = property_taxes + insurance + hoa + maintenance + pest_control + property_management + additional_expenses
     calculated_monthly_expenses_label = ctk.CTkLabel(monthly_expenses_frame, text = "Monthly Expenses = " + "$" + str(monthly_expenses))
-    calculated_monthly_expenses_label.grid()
+    calculated_monthly_expenses_label.grid(row = 5, column = 0, columnspan = 2)
 
 def show_me_the_money():
     calculate_initial_capital()
@@ -66,6 +66,7 @@ initial_capital_frame.grid(row = 0)
 initial_capital_frame.rowconfigure(0, weight = 1)
 initial_capital_frame.rowconfigure(1, weight = 1)
 initial_capital_frame.rowconfigure(2, weight = 1)
+initial_capital_frame.rowconfigure(3, weight = 1)
 initial_capital_frame.columnconfigure(0, weight = 1)
 initial_capital_frame.columnconfigure(1, weight = 1)
 initial_capital_label = ctk.CTkLabel(initial_capital_frame, text = "Initial Capital Investment")
@@ -112,6 +113,7 @@ monthly_income_frame = ctk.CTkFrame(root)
 monthly_income_frame.grid(row = 1)
 monthly_income_frame.rowconfigure(0, weight = 1)
 monthly_income_frame.rowconfigure(1, weight = 1)
+monthly_income_frame.rowconfigure(2, weight = 1)
 monthly_income_frame.columnconfigure(0, weight = 1)
 monthly_income_frame.columnconfigure(1, weight = 1)
 monthly_income_label = ctk.CTkLabel(monthly_income_frame, text = "Monthly Income")
@@ -140,12 +142,20 @@ additional_income_entry.grid()
 ##############################
 monthly_expenses_frame = ctk.CTkFrame(root)
 monthly_expenses_frame.grid(row = 2)
+monthly_expenses_frame.rowconfigure(0, weight = 1)
+monthly_expenses_frame.rowconfigure(1, weight = 1)
+monthly_expenses_frame.rowconfigure(2, weight = 1)
+monthly_expenses_frame.rowconfigure(3, weight = 1)
+monthly_expenses_frame.rowconfigure(4, weight = 1)
+monthly_expenses_frame.rowconfigure(5, weight = 1)
+monthly_expenses_frame.columnconfigure(0, weight = 1)
+monthly_expenses_frame.columnconfigure(1, weight = 1)
 monthly_expenses_label = ctk.CTkLabel(monthly_expenses_frame, text = "Monthly Expenses")
-monthly_expenses_label.grid()
+monthly_expenses_label.grid(row = 0, column = 0, columnspan = 2)
 
 # "Property Taxes" frame, label, and entry #
 property_taxes_frame = ctk.CTkFrame(monthly_expenses_frame)
-property_taxes_frame.grid()
+property_taxes_frame.grid(row = 1, column = 0)
 property_taxes_label = ctk.CTkLabel(property_taxes_frame, text = "Property Taxes")
 property_taxes_label.grid()
 property_taxes_entry = ctk.CTkEntry(property_taxes_frame, placeholder_text = "$")
@@ -153,7 +163,7 @@ property_taxes_entry.grid()
 
 # "Insurance" frame, label, and entry #
 insurance_frame = ctk.CTkFrame(monthly_expenses_frame)
-insurance_frame.grid()
+insurance_frame.grid(row = 1, column = 1)
 insurance_label = ctk.CTkLabel(insurance_frame, text = "Insurance")
 insurance_label.grid()
 insurance_entry = ctk.CTkEntry(insurance_frame, placeholder_text = "$")
@@ -161,7 +171,7 @@ insurance_entry.grid()
 
 # "HOA" frame, label, and entry #
 hoa_frame = ctk.CTkFrame(monthly_expenses_frame)
-hoa_frame.grid()
+hoa_frame.grid(row = 2, column = 0)
 hoa_label = ctk.CTkLabel(hoa_frame, text = "HOA")
 hoa_label.grid()
 hoa_entry = ctk.CTkEntry(hoa_frame, placeholder_text = "$")
@@ -169,7 +179,7 @@ hoa_entry.grid()
 
 # "Maintenance" frame, label, and entry #
 maintenance_frame = ctk.CTkFrame(monthly_expenses_frame)
-maintenance_frame.grid()
+maintenance_frame.grid(row = 2, column = 1)
 maintenance_label = ctk.CTkLabel(maintenance_frame, text = "Maintenance")
 maintenance_label.grid()
 maintenance_entry = ctk.CTkEntry(maintenance_frame, placeholder_text = "%")
@@ -177,7 +187,7 @@ maintenance_entry.grid()
 
 # "Pest Control" frame, label, and entry #
 pest_control_frame = ctk.CTkFrame(monthly_expenses_frame)
-pest_control_frame.grid()
+pest_control_frame.grid(row = 3, column = 0)
 pest_control_label = ctk.CTkLabel(pest_control_frame, text = "Pest Control")
 pest_control_label.grid()
 pest_control_entry = ctk.CTkEntry(pest_control_frame, placeholder_text = "$")
@@ -185,7 +195,7 @@ pest_control_entry.grid()
 
 # "Property Management" frame, label, and entry #
 property_management_frame = ctk.CTkFrame(monthly_expenses_frame)
-property_management_frame.grid()
+property_management_frame.grid(row = 3, column = 1)
 property_management_label = ctk.CTkLabel(property_management_frame, text = "Property Management")
 property_management_label.grid()
 property_management_entry = ctk.CTkEntry(property_management_frame, placeholder_text = "%")
@@ -193,7 +203,7 @@ property_management_entry.grid()
 
 # "Additional Expenses" frame, label, and entry #
 additional_expenses_frame = ctk.CTkFrame(monthly_expenses_frame)
-additional_expenses_frame.grid()
+additional_expenses_frame.grid(row = 4, column = 0, columnspan = 2)
 additional_expenses_label = ctk.CTkLabel(additional_expenses_frame, text = "Additional Expenses")
 additional_expenses_label.grid()
 additional_expenses_entry = ctk.CTkEntry(additional_expenses_frame, placeholder_text = "$")
