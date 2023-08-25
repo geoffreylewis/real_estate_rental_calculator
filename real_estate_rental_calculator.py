@@ -17,6 +17,7 @@ def calculate_initial_capital():
     initial_capital = down_payment + closing_costs + mrr_costs
     calculated_initial_capital_label = ctk.CTkLabel(initial_capital_frame, text = "Initial Capital Investment = " + "$" + str(initial_capital))
     calculated_initial_capital_label.grid(row = 3, column = 0, columnspan = 2)
+    return initial_capital
 
 def calculate_monthly_income():
     rent = int(rent_entry.get())
@@ -24,6 +25,7 @@ def calculate_monthly_income():
     monthly_income = rent + additional_income
     calculated_monthly_income_label = ctk.CTkLabel(monthly_income_frame, text = "Monthly Income = " + "$" + str(monthly_income))
     calculated_monthly_income_label.grid(row = 2, column = 0, columnspan = 2)
+    return monthly_income
 
 def calculate_monthly_expenses():
     rent = int(rent_entry.get())
@@ -37,11 +39,20 @@ def calculate_monthly_expenses():
     monthly_expenses = property_taxes + insurance + hoa + maintenance + pest_control + property_management + additional_expenses
     calculated_monthly_expenses_label = ctk.CTkLabel(monthly_expenses_frame, text = "Monthly Expenses = " + "$" + str(monthly_expenses))
     calculated_monthly_expenses_label.grid(row = 5, column = 0, columnspan = 2)
+    return monthly_expenses
+
+def calculate_net_operating_income():
+    monthly_noi = calculate_monthly_income() - calculate_monthly_expenses()
+    yearly_noi = monthly_noi * 12
+    calculated_net_operating_income_label = ctk.CTkLabel(root, text = "Net Operating Income = " + "$" + str(yearly_noi))
+    calculated_net_operating_income_label.grid()
+    return yearly_noi
 
 def show_me_the_money():
     calculate_initial_capital()
     calculate_monthly_income()
     calculate_monthly_expenses()
+    calculate_net_operating_income()
 
 
 
