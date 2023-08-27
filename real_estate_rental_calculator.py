@@ -48,11 +48,18 @@ def calculate_net_operating_income():
     calculated_net_operating_income_label.grid()
     return yearly_noi
 
+def calculate_cap_rate():
+    purchase_price = int(purchase_price_entry.get())
+    cap_rate = (calculate_net_operating_income() / purchase_price) * 100
+    calculated_cap_rate_label = ctk.CTkLabel(root, text = "Cap Rate = " + str(cap_rate) + "%")
+    calculated_cap_rate_label.grid()
+    return cap_rate
+
 def show_me_the_money():
     calculate_initial_capital()
     calculate_monthly_income()
     calculate_monthly_expenses()
-    calculate_net_operating_income()
+    calculate_cap_rate()
 
 
 
