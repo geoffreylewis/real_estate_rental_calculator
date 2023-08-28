@@ -16,7 +16,7 @@ def calculate_initial_capital():
     mrr_costs = int(mrr_costs_entry.get())
     initial_capital = down_payment + closing_costs + mrr_costs
     calculated_initial_capital_label = ctk.CTkLabel(initial_capital_frame, text = "Initial Capital Investment = " + "$" + str(initial_capital))
-    calculated_initial_capital_label.grid(row = 3, column = 0, columnspan = 2)
+    calculated_initial_capital_label.grid(row = 4, column = 0, columnspan = 2)
     return initial_capital
 
 def calculate_monthly_income():
@@ -54,7 +54,7 @@ def calculate_cap_rate():
     calculated_cap_rate_label = ctk.CTkLabel(root, text = "Cap Rate = " + str(cap_rate) + "%")
     calculated_cap_rate_label.grid()
     return cap_rate
-
+    
 def show_me_the_money():
     calculate_initial_capital()
     calculate_monthly_income()
@@ -85,6 +85,7 @@ initial_capital_frame.rowconfigure(0, weight = 1)
 initial_capital_frame.rowconfigure(1, weight = 1)
 initial_capital_frame.rowconfigure(2, weight = 1)
 initial_capital_frame.rowconfigure(3, weight = 1)
+initial_capital_frame.rowconfigure(4, weight = 1)
 initial_capital_frame.columnconfigure(0, weight = 1)
 initial_capital_frame.columnconfigure(1, weight = 1)
 initial_capital_label = ctk.CTkLabel(initial_capital_frame, text = "Initial Capital Investment")
@@ -106,9 +107,25 @@ down_payment_label.grid()
 down_payment_entry = ctk.CTkEntry(down_payment_frame, placeholder_text = "%")
 down_payment_entry.grid()
 
+# "Mortgage Term" frame, label, and entry #
+mortgage_term_frame = ctk.CTkFrame(initial_capital_frame)
+mortgage_term_frame.grid(row = 2, column = 0)
+mortgage_term_label = ctk.CTkLabel(mortgage_term_frame, text = "Mortgage Term")
+mortgage_term_label.grid()
+mortgage_term_entry = ctk.CTkEntry(mortgage_term_frame, placeholder_text = "Years")
+mortgage_term_entry.grid()
+
+# "Mortgage Interest Rate" frame, label, and entry #
+mortgage_interest_rate_frame = ctk.CTkFrame(initial_capital_frame)
+mortgage_interest_rate_frame.grid(row = 2, column = 1)
+mortgage_interest_rate_label = ctk.CTkLabel(mortgage_interest_rate_frame, text = "Mortgage Interest Rate")
+mortgage_interest_rate_label.grid()
+mortgage_interest_rate_entry = ctk.CTkEntry(mortgage_interest_rate_frame, placeholder_text = "%")
+mortgage_interest_rate_entry.grid()
+
 # "Closing Costs" frame, label, and entry #
 closing_costs_frame = ctk.CTkFrame(initial_capital_frame)
-closing_costs_frame.grid(row = 2, column = 0)
+closing_costs_frame.grid(row = 3, column = 0)
 closing_costs_label = ctk.CTkLabel(closing_costs_frame, text = "Closing Costs")
 closing_costs_label.grid()
 closing_costs_entry = ctk.CTkEntry(closing_costs_frame, placeholder_text = "%")
@@ -116,7 +133,7 @@ closing_costs_entry.grid()
 
 # "Make-Rent-Ready Costs" frame, label, and entry #
 mrr_costs_frame = ctk.CTkFrame(initial_capital_frame)
-mrr_costs_frame.grid(row = 2, column = 1)
+mrr_costs_frame.grid(row = 3, column = 1)
 mrr_costs_label = ctk.CTkLabel(mrr_costs_frame, text = "Make-Rent-Ready Costs")
 mrr_costs_label.grid()
 mrr_costs_entry = ctk.CTkEntry(mrr_costs_frame, placeholder_text = "$")
