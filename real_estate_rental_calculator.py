@@ -73,6 +73,7 @@ root.rowconfigure(0, weight = 1)
 root.rowconfigure(1, weight = 1)
 root.rowconfigure(2, weight = 1)
 root.rowconfigure(3, weight = 1)
+root.columnconfigure(0, weight = 1)
 
 
 
@@ -80,7 +81,7 @@ root.rowconfigure(3, weight = 1)
 ## "Initial Capital Investment" frame ##
 ########################################
 initial_capital_frame = ctk.CTkFrame(root)
-initial_capital_frame.grid(row = 0)
+initial_capital_frame.grid(row = 0, column = 0)
 initial_capital_frame.rowconfigure(0, weight = 1)
 initial_capital_frame.rowconfigure(1, weight = 1)
 initial_capital_frame.rowconfigure(2, weight = 1)
@@ -145,7 +146,7 @@ mrr_costs_entry.grid()
 ## "Monthly Income" frame ##
 ############################
 monthly_income_frame = ctk.CTkFrame(root)
-monthly_income_frame.grid(row = 1)
+monthly_income_frame.grid(row = 1, column = 0)
 monthly_income_frame.rowconfigure(0, weight = 1)
 monthly_income_frame.rowconfigure(1, weight = 1)
 monthly_income_frame.rowconfigure(2, weight = 1)
@@ -176,7 +177,7 @@ additional_income_entry.grid()
 ## "Monthly Expenses" frame ##
 ##############################
 monthly_expenses_frame = ctk.CTkFrame(root)
-monthly_expenses_frame.grid(row = 2)
+monthly_expenses_frame.grid(row = 2, column = 0)
 monthly_expenses_frame.rowconfigure(0, weight = 1)
 monthly_expenses_frame.rowconfigure(1, weight = 1)
 monthly_expenses_frame.rowconfigure(2, weight = 1)
@@ -250,7 +251,7 @@ additional_expenses_entry.grid()
 ## Button for performing the calculations ##
 ############################################
 calculate_button = ctk.CTkButton(root, text = "Show me the money!", command = show_me_the_money)
-calculate_button.grid(row = 3)
+calculate_button.grid(row = 3, column = 0)
 
 
 
