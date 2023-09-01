@@ -67,7 +67,7 @@ def show_me_the_money():
 ### The main widget/window ###
 ##############################
 root = ctk.CTk()
-root.geometry('750x600')
+root.geometry('500x800')
 root.title("Real Estate Rental Calculator")
 root.rowconfigure(0, weight = 1)
 root.rowconfigure(1, weight = 1)
