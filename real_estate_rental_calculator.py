@@ -54,6 +54,13 @@ def calculate_cap_rate():
     calculated_cap_rate_label = ctk.CTkLabel(root, text = "Cap Rate = " + str(cap_rate) + "%")
     calculated_cap_rate_label.grid()
     return cap_rate
+
+def calculate_debt_service():
+    purchase_price = int(purchase_price_entry.get())
+    down_payment = int(down_payment_entry.get()) * 0.01 * int(purchase_price_entry.get())
+    loan_amount = purchase_price - down_payment
+    interest_rate = int(mortgage_interest_rate_entry.get())
+    months_to_pay_loan = int(mortgage_term_entry.get()) * 12
     
 def show_me_the_money():
     calculate_initial_capital()
